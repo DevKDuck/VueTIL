@@ -3,7 +3,6 @@
         <h1>{{state.count}}</h1>
         <button @click="increment">증가</button>
         <button @click="decrement">감소</button>
-        <div> 경덕 </div>
     </div>
 </template>
 <script setup>
