@@ -1,26 +1,19 @@
-<template lang="">
+<template>
     <div>
         <h1>{{state.count}}</h1>
-        <button @click="increment">클릭</button>
+        <button @click="increment">증가</button>
+        <button @click="decrement">감소</button>
+        <div> 경덕 </div>
     </div>
 </template>
-<script>
+<script setup>
 import { reactive } from 'vue'
+   const state = reactive({ count: 0 })
+   const increment = () => {
+    state.count++;
+   }
 
-export default {
-    setup() {
-    const state = reactive({ count: 0 })
-
-    // 상태를 템플릿에 노출
-    return {
-      state,
-      increment : function () {
-        state.count++;
-      }
-    }
-  }
-}
+   const decrement = () => {
+    state.count--;
+   }
 </script>
-<style lang="">
-    
-</style>
