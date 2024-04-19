@@ -1,18 +1,7 @@
-<!-- <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <Hello/>
-  <step1/>
-</template>
 
 <script setup>
-  import Hello from '/@mycomp/Hello.vue'
-  import step1 from '/@mycomp/step1.vue'
-</script>
- -->
-
-
-<script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import ComputedTodolist from '/@mycomp/ComputedTodolist.vue'
 
 const isActive = ref(true);
 const hasError = ref(false);
@@ -43,6 +32,8 @@ function errorToggle() {
 </script>
 
 <template>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <ComputedTodolist/><br>
   <button @click="toggle">토글 버튼</button>
   <button @click="errorToggle">error 토글 버튼</button>
   <h1 v-if="awesome">Vue는 굉장해! 엄청나!</h1>
