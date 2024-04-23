@@ -2,7 +2,8 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import LoginForm from '/@mycomp/LoginForm.vue'
+// import LoginForm from '/@mycomp/LoginForm.vue'
+import WatchFuncTest from '/@mycomp/WatchFuncTest.vue'
 // import ComputedTodolist from '/@mycomp/ComputedTodolist.vue'
 
 
@@ -36,8 +37,8 @@ import LoginForm from '/@mycomp/LoginForm.vue'
 
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-
-  <LoginForm/>
+<WatchFuncTest/>
+  <!-- <LoginForm/> -->
    <!-- <ComputedTodolist/><br> -->
   <!-- <button @click="toggle">토글 버튼</button> -->
   <!-- <button @click="errorToggle">error 토글 버튼</button> -->
