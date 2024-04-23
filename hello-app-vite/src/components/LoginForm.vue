@@ -1,7 +1,8 @@
 
 
 <template lang="">
-    <form v-on:submit="loginForm">
+    <!-- <form v-on:submit="loginForm"> -->
+        <form @submit.prevent = "loginForm">
     <p> 
         아이디 : 
         <input v-model = "user_id" placeholder="아이디 입력하세요"/>
@@ -46,7 +47,7 @@
 
     <p> 
         생년월일 : 
-        <input v-model = "user_birthday" placeholder="생년월일 입력하세요"/>
+        <input type= "date" v-model = "user_birthday" placeholder="생년월일 입력하세요"/>
     </p>
 
     <button @click="(event) => loginForm(event)">
