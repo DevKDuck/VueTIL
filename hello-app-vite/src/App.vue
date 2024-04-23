@@ -1,9 +1,34 @@
-
-
 <script setup>
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
+import LoginForm1 from '/@mycomp/LoginForm1.vue'
+import LoginForm2 from '/@mycomp/LoginForm2.vue'
+import LoginForm3 from '/@mycomp/LoginForm3.vue'
+import BlogPost from '/@mycomp/BlogPost.vue'
+const list = ref([
+  {id : 1, title: "블로그 제목" },
+  {id : 2, title: "네이버 블로그 제목"},
+  {id : 3, title: "MSA2024 만세"}
+]);
+
+function onFontSizeChange(fontSize) {
+  console.log("onFontSizeChange().... ", fontSize);
+}
+</script>
+
+<template>
+  <h1>내가 부모임</h1>
+  <BlogPost v-for="item in list" :key="item.id" :id="item.id" :title="item.title"
+    @fontSizeChange="onFontSizeChange"
+  />
+</template>
+
+<style >
+</style>
+
+<!-- <script setup> -->
+// import { ref, computed } from 'vue'
 // import LoginForm from '/@mycomp/LoginForm.vue'
-import WatchFuncTest from '/@mycomp/WatchFuncTest.vue'
+// import WatchFuncTest from '/@mycomp/WatchFuncTest.vue'
 // import ComputedTodolist from '/@mycomp/ComputedTodolist.vue'
 
 
@@ -33,11 +58,11 @@ import WatchFuncTest from '/@mycomp/WatchFuncTest.vue'
 //   // }
 
 // }
-</script>
+<!-- </script> -->
 
-<template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-<WatchFuncTest/>
+<!-- <template> -->
+  <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
+<!-- <WatchFuncTest/> -->
   <!-- <LoginForm/> -->
    <!-- <ComputedTodolist/><br> -->
   <!-- <button @click="toggle">토글 버튼</button> -->
@@ -46,7 +71,7 @@ import WatchFuncTest from '/@mycomp/WatchFuncTest.vue'
   <!-- <h1 v-else>오 안돼 😢</h1> -->
   <!-- div id="aaa" class="static">만세~~~</div -->
   <!-- <div class="static" :class="{active: isActive, 'text-danger' : hasError}">만세~~~</div>  -->
-</template>
+<!-- </template> -->
 
 <!-- <style > -->
     <!-- .static {
