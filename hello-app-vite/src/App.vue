@@ -1,24 +1,54 @@
 <script setup>
 import { ref } from 'vue'
-import LoginForm1 from '/@mycomp/LoginForm1.vue'
-import LoginForm2 from '/@mycomp/LoginForm2.vue'
-import LoginForm3 from '/@mycomp/LoginForm3.vue'
-import BlogPost from '/@mycomp/BlogPost.vue'
+import BlogPost1 from '/@mycomp/BlogPost1.vue'
+import BlogPost2 from '/@mycomp/BlogPost2.vue'
 const list = ref([
   {id : 1, title: "블로그 제목" },
   {id : 2, title: "네이버 블로그 제목"},
   {id : 3, title: "MSA2024 만세"}
 ]);
 
-function onFontSizeChange(fontSize) {
-  console.log("onFontSizeChange().... ", fontSize);
+const fontSize = ref(10);
+
+function onZoomIn(param) {
+  fontSize.value++;
+} 
+
+function onZoomOut(param) {
+  fontSize.value--;
+} 
+
+function onFontSizeChange() {
+  //
+  if (arguments.length == 0) {
+    console.log("인자 없음");
+  } else if (arguments.length == 1) {
+    if (typeof arguments[0].length == 'undefined') {
+      console.log("연관 배열 -> ", arguments[0]);
+      fontSize.value = arguments[0].fontSize;
+    } else if (arguments[0].length != 0) {
+      fontSize.value = arguments[0][0];
+      console.log("1건 자료 -> ", arguments[0]);
+    }
+  } else {
+    console.log("색인 배열 -> ", arguments);
+    fontSize.value = arguments[0];
+  }
+
+  console.log("onFontSizeChange().... ");
 }
 </script>
 
 <template>
-  <h1>내가 부모임</h1>
-  <BlogPost v-for="item in list" :key="item.id" :id="item.id" :title="item.title"
-    @fontSizeChange="onFontSizeChange"
+  <h1>내가 부모임( {{fontSize}} )</h1>
+  <BlogPost1 v-for="item in list" :key="item.id" :id="item.id" :title="item.title" :fontSize="fontSize"
+  @zoomIn="onZoomIn"
+  @zoomOut="onZoomOut"
+  />
+  <hr/>
+  <BlogPost2 v-for="item in list" :key="item.id" :id="item.id" :title="item.title" :fontSize="fontSize"
+  @zoomIn="onZoomIn"
+  @zoomOut="onZoomOut"
   />
 </template>
 
