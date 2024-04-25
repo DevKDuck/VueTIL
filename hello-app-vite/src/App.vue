@@ -1,4 +1,17 @@
+<template>
+  <div>
+    <router-view />
+  </div>
+</template>
+
 <script setup>
+
+</script>
+
+<style>
+</style>
+
+<!-- <script setup>
 import { ref } from 'vue'
 import BlogPost1 from '/@mycomp/BlogPost1.vue'
 import BlogPost2 from '/@mycomp/BlogPost2.vue'
@@ -37,9 +50,9 @@ function onFontSizeChange() {
 
   console.log("onFontSizeChange().... ");
 }
-</script>
+</script> -->
 
-<template>
+<!-- <template>
   <h1>내가 부모임( {{fontSize}} )</h1>
   <BlogPost1 v-for="item in list" :key="item.id" :id="item.id" :title="item.title" :fontSize="fontSize"
   @zoomIn="onZoomIn"
@@ -50,10 +63,10 @@ function onFontSizeChange() {
   @zoomIn="onZoomIn"
   @zoomOut="onZoomOut"
   />
-</template>
+</template> -->
 
-<style >
-</style>
+<!-- <style >
+</style> -->
 
 <!-- <script setup> -->
 // import { ref, computed } from 'vue'
